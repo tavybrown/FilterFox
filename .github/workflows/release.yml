@@ -1,0 +1,91 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build extension
+        run: npm run build
+        
+      - name: Create extension package
+        run: |
+          mkdir -p releases
+          zip -r releases/FilterFox-Chrome-v${{ github.ref_name }}.zip manifest.json src/ popup/ styles/ icons/ rules/ config/
+          
+      - name: Create source package
+        run: |
+          zip -r releases/FilterFox-Source-v${{ github.ref_name }}.zip . -x "node_modules/*" "dist/*" "build/*" ".git/*" "releases/*"
+          
+      - name: Generate changelog
+        id: changelog
+        run: |
+          echo "## What's New in FilterFox ${{ github.ref_name }}" > changelog.md
+          echo "" >> changelog.md
+          echo "### 🚀 Features" >> changelog.md
+          echo "- Enhanced ad blocking performance" >> changelog.md
+          echo "- Improved tracker detection" >> changelog.md
+          echo "- Better memory efficiency" >> changelog.md
+          echo "" >> changelog.md
+          echo "### 🐛 Bug Fixes" >> changelog.md
+          echo "- Fixed popup display issues" >> changelog.md
+          echo "- Resolved content script conflicts" >> changelog.md
+          echo "- Improved filter list updates" >> changelog.md
+          echo "" >> changelog.md
+          echo "### 📦 Downloads" >> changelog.md
+          echo "- **Chrome Extension**: FilterFox-Chrome-v${{ github.ref_name }}.zip" >> changelog.md
+          echo "- **Source Code**: FilterFox-Source-v${{ github.ref_name }}.zip" >> changelog.md
+          echo "" >> changelog.md
+          echo "### 🔗 Links" >> changelog.md
+          echo "- [Chrome Web Store](https://chrome.google.com/webstore/detail/filterfox)" >> changelog.md
+          echo "- [Installation Guide](https://github.com/tavybrown/FilterFox#installation)" >> changelog.md
+          echo "- [Contributing](https://github.com/tavybrown/FilterFox/blob/main/CONTRIBUTING.md)" >> changelog.md
+          
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: FilterFox ${{ github.ref_name }}
+          body_path: changelog.md
+          draft: false
+          prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') || contains(github.ref, 'rc') }}
+          
+      - name: Upload Chrome Extension
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: releases/FilterFox-Chrome-v${{ github.ref_name }}.zip
+          asset_name: FilterFox-Chrome-v${{ github.ref_name }}.zip
+          asset_content_type: application/zip
+          
+      - name: Upload Source Code
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: releases/FilterFox-Source-v${{ github.ref_name }}.zip
+          asset_name: FilterFox-Source-v${{ github.ref_name }}.zip
+          asset_content_type: application/zip
