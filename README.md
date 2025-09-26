@@ -3,15 +3,23 @@
 <div align="center">
   <img src="icons/icon128.png" alt="FilterFox Logo" width="128">
   
-  [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/abcdefghijklmnopqrstuvwxyz123456?label=Chrome%20Web%20Store)](https://chrome.google.com/webstore/detail/abcdefghijklmnopqrstuvwxyz123456)
-  [![Mozilla Add-on](https://img.shields.io/amo/v/filterfox?label=Firefox%20Add-on)](https://addons.mozilla.org/addon/filterfox/)
-  [![GitHub release](https://img.shields.io/github/v/release/tavybrown/filterfox)](https://github.com/tavybrown/filterfox/releases)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Build Status](https://github.com/tavybrown/filterfox/workflows/CI/badge.svg)](https://github.com/tavybrown/filterfox/actions)
+  [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/tavybrown/FilterFox/ci.yml?branch=main&label=Build&logo=github)](https://github.com/tavybrown/FilterFox/actions)
+  [![GitHub release](https://img.shields.io/github/v/release/tavybrown/FilterFox?label=Version&logo=github)](https://github.com/tavybrown/FilterFox/releases)
+  [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/placeholder?label=Chrome%20Store&logo=googlechrome&color=blue)](https://chrome.google.com/webstore)
+  [![Mozilla Add-on](https://img.shields.io/badge/Firefox-Add--on-orange?logo=firefox)](https://addons.mozilla.org)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?logo=opensourceinitiative)](https://opensource.org/licenses/MIT)
+  [![Contributors](https://img.shields.io/github/contributors/tavybrown/FilterFox?label=Contributors&logo=github)](https://github.com/tavybrown/FilterFox/graphs/contributors)
+  [![Stars](https://img.shields.io/github/stars/tavybrown/FilterFox?style=social)](https://github.com/tavybrown/FilterFox/stargazers)
+  [![Forks](https://img.shields.io/github/forks/tavybrown/FilterFox?style=social)](https://github.com/tavybrown/FilterFox/network/members)
   
   **A powerful, lightweight, and privacy-focused ad blocker for Chrome and Firefox**
   
-  [Download](#installation) • [Features](#features) • [Documentation](docs/) • [Contributing](#contributing)
+  ![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=flat-square)
+  ![Manifest](https://img.shields.io/badge/Manifest-V3-blue?style=flat-square&logo=googlechrome)
+  ![ES6](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat-square&logo=javascript)
+  ![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red?style=flat-square)
+  
+  [Download](#installation) • [Features](#features) • [Documentation](docs/) • [Contributing](#contributing) • [Roadmap](#roadmap)
 </div>
 
 ---
