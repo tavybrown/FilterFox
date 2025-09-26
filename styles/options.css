@@ -1,42 +1,49 @@
 /**
- * Enhanced Options Page Styles for FilterFox
- * Modern, responsive design with dark theme support
+ * Chrome Native Options Page Styles for FilterFox
+ * Based on Chrome's Material Design system
  */
 
 :root {
-    /* Glassmorphism Color Palette */
-    --primary-color: #6366f1;
-    --primary-hover: #4f46e5;
-    --secondary-color: #10b981;
-    --accent-color: #f59e0b;
+    /* Chrome Material Colors */
+    --primary-color: #1a73e8;
+    --primary-hover: #1557b0;
+    --secondary-color: #34a853;
+    --accent-color: #fbbc04;
+    --danger-color: #ea4335;
+    --warning-color: #ff9800;
     
-    /* Surface Colors */
-    --background: #0f172a;
-    --background-pattern: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%), 
-                         radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
-    --surface: rgba(30, 41, 59, 0.8);
-    --surface-dark: rgba(15, 23, 42, 0.9);
-    --surface-light: rgba(51, 65, 85, 0.6);
+    /* Chrome Surface Colors */
+    --background: #ffffff;
+    --surface: #f8f9fa;
+    --surface-hover: #f1f3f4;
+    --surface-selected: #e8f0fe;
+    --border-color: #dadce0;
+    --divider-color: #e8eaed;
     
-    /* Glass Effect */
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --glow-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    /* Chrome Text Colors */
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --text-disabled: #9aa0a6;
+    --text-link: #1a73e8;
     
-    /* Text Colors */
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #64748b;
+    /* Chrome Spacing & Borders */
+    --border-radius: 8px;
+    --border-radius-small: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 24px;
     
-    /* Status Colors */
-    --success-color: #10b981;
-    --warning-color: #f59e0b;
-    --danger-color: #ef4444;
+    /* Chrome Shadows */
+    --shadow-1: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    --shadow-2: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    --shadow-3: 0 4px 8px 3px rgba(60, 64, 67, 0.15), 0 1px 3px rgba(60, 64, 67, 0.3);
     
-    /* Animation */
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --border-radius: 12px;
+    /* Chrome Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    --transition-standard: 250ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 * {
@@ -46,9 +53,10 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+    font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
     background: var(--background);
-    background-image: var(--background-pattern);
     color: var(--text-primary);
     min-height: 100vh;
     line-height: 1.6;
