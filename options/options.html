@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="settings.title">FilterFox Settings</title>
+    <link rel="stylesheet" href="../styles/options.css">
+</head>
+<body>
+    <div class="options-container">
+        <!-- Header -->
+        <header class="options-header">
+            <div class="header-content">
+                <img src="../icons/icon48.png" alt="FilterFox" class="header-logo">
+                <div class="header-text">
+                    <h1 data-i18n="extension_name">FilterFox</h1>
+                    <p data-i18n="extension_description">Advanced ad blocker with smart filtering and privacy protection</p>
+                </div>
+                <div class="header-version">
+                    <span class="version-badge">v1.0.0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="options-nav">
+            <button class="nav-item active" data-tab="general" data-i18n="settings.general">General</button>
+            <button class="nav-item" data-tab="filters" data-i18n="settings.filters">Filters</button>
+            <button class="nav-item" data-tab="privacy" data-i18n="settings.privacy">Privacy</button>
+            <button class="nav-item" data-tab="whitelist" data-i18n="popup.whitelist.header">Whitelist</button>
+            <button class="nav-item" data-tab="advanced" data-i18n="settings.advanced">Advanced</button>
+            <button class="nav-item" data-tab="about" data-i18n="settings.about">About</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="options-main">
+            <!-- General Settings -->
+            <section id="general" class="tab-content active">
+                <h2 data-i18n="settings.general">General Settings</h2>
+                
+                <div class="setting-group">
+                    <h3>Extension Behavior</h3>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="enableExtension" checked>
+                            <span class="checkbox-custom"></span>
+                            Enable FilterFox
+                        </label>
+                        <p class="setting-description">Master switch to enable or disable the extension</p>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="showNotifications" checked>
+                            <span class="checkbox-custom"></span>
+                            Show Notifications
+                        </label>
+                        <p class="setting-description">Display notifications when ads are blocked</p>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="updateBadge" checked>
+                            <span class="checkbox-custom"></span>
+                            Update Badge Counter
+                        </label>
+                        <p class="setting-description">Show blocked count on extension icon</p>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Language & Region</h3>
+                    <div class="setting-item">
+                        <label for="language-select" class="setting-label-text">Language</label>
+                        <select id="language-select" class="setting-select">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                            <option value="de">Deutsch</option>
+                            <option value="ja">日本語</option>
+                            <option value="zh">中文</option>
+                            <option value="pt">Português</option>
+                        </select>
+                        <p class="setting-description">Choose your preferred language</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filter Settings -->
+            <section id="filters" class="tab-content">
+                <h2>Filter Settings</h2>
+                
+                <div class="setting-group">
+                    <h3>Ad Blocking</h3>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="blockAds" checked>
+                            <span class="checkbox-custom"></span>
+                            Block Advertisements
+                        </label>
+                        <p class="setting-description">Block display ads, banner ads, and promotional content</p>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="blockPopups" checked>
+                            <span class="checkbox-custom"></span>
+                            Block Popups & Overlays
+                        </label>
+                        <p class="setting-description">Prevent popup windows and overlay advertisements</p>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="blockAutoplay" checked>
+                            <span class="checkbox-custom"></span>
+                            Block Autoplay Media
+                        </label>
+                        <p class="setting-description">Stop videos and audio from playing automatically</p>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Tracking Protection</h3>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="blockTrackers" checked>
+                            <span class="checkbox-custom"></span>
+                            Block Tracking Scripts
+                        </label>
+                        <p class="setting-description">Prevent websites from tracking your browsing behavior</p>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="blockAnalytics" checked>
+                            <span class="checkbox-custom"></span>
+                            Block Analytics
+                        </label>
+                        <p class="setting-description">Block Google Analytics and similar services</p>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="blockSocial">
+                            <span class="checkbox-custom"></span>
+                            Block Social Media Widgets
+                        </label>
+                        <p class="setting-description">Remove social media buttons and embedded content</p>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Filter Lists</h3>
+                    <div class="filter-lists">
+                        <div class="filter-list-item">
+                            <div class="filter-info">
+                                <h4>EasyList</h4>
+                                <p>Primary filter list for blocking ads</p>
+                                <small>Last updated: <span class="update-time">2 hours ago</span></small>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="filter-list-item">
+                            <div class="filter-info">
+                                <h4>EasyPrivacy</h4>
+                                <p>Blocks tracking and analytics scripts</p>
+                                <small>Last updated: <span class="update-time">5 hours ago</span></small>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="filter-list-item">
+                            <div class="filter-info">
+                                <h4>Fanboy's Social</h4>
+                                <p>Removes social media widgets</p>
+                                <small>Last updated: <span class="update-time">1 day ago</span></small>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-secondary" id="updateFilters">
+                        <span class="btn-icon">🔄</span>
+                        Update All Filter Lists
+                    </button>
+                </div>
+            </section>
+
+            <!-- Privacy Settings -->
+            <section id="privacy" class="tab-content">
+                <h2 data-i18n="settings.privacy">Privacy Settings</h2>
+                
+                <div class="setting-group">
+                    <h3>Data Collection</h3>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="collectStats">
+                            <span class="checkbox-custom"></span>
+                            Collect Anonymous Statistics
+                        </label>
+                        <p class="setting-description">Help improve FilterFox by sharing anonymous usage data</p>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="shareFilterHits">
+                            <span class="checkbox-custom"></span>
+                            Share Filter Performance
+                        </label>
+                        <p class="setting-description">Share which filters are most effective (no personal data)</p>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Local Data</h3>
+                    <div class="setting-item">
+                        <div class="setting-row">
+                            <div>
+                                <h4>Clear Browsing Data</h4>
+                                <p class="setting-description">Remove stored whitelist and statistics</p>
+                            </div>
+                            <button class="btn btn-danger" id="clearData">Clear Data</button>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-row">
+                            <div>
+                                <h4>Export Settings</h4>
+                                <p class="setting-description">Download your settings as a backup file</p>
+                            </div>
+                            <button class="btn btn-secondary" id="exportSettings">Export</button>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-row">
+                            <div>
+                                <h4>Import Settings</h4>
+                                <p class="setting-description">Restore settings from a backup file</p>
+                            </div>
+                            <button class="btn btn-secondary" id="importSettings">Import</button>
+                            <input type="file" id="importFile" accept=".json" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Whitelist Settings -->
+            <section id="whitelist" class="tab-content">
+                <h2 data-i18n="popup.whitelist.header">Whitelist Management</h2>
+                
+                <div class="setting-group">
+                    <div class="whitelist-add">
+                        <input type="text" id="whitelistInput" placeholder="Enter domain (e.g., example.com)" class="whitelist-input">
+                        <button class="btn btn-primary" id="addWhitelist">Add Domain</button>
+                    </div>
+
+                    <div class="whitelist-list" id="whitelistList">
+                        <!-- Whitelist items will be populated by JavaScript -->
+                    </div>
+
+                    <div class="whitelist-actions">
+                        <button class="btn btn-secondary" id="exportWhitelist">Export Whitelist</button>
+                        <button class="btn btn-danger" id="clearWhitelist">Clear All</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Settings -->
+            <section id="advanced" class="tab-content">
+                <h2 data-i18n="settings.advanced">Advanced Settings</h2>
+                
+                <div class="setting-group">
+                    <h3>Performance</h3>
+                    <div class="setting-item">
+                        <label for="maxMemory" class="setting-label-text">Memory Limit (MB)</label>
+                        <input type="range" id="maxMemory" min="50" max="500" value="200" class="setting-range">
+                        <span class="range-value">200 MB</span>
+                        <p class="setting-description">Maximum memory usage for caching filters</p>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="updateInterval" class="setting-label-text">Filter Update Interval</label>
+                        <select id="updateInterval" class="setting-select">
+                            <option value="1">Every hour</option>
+                            <option value="24" selected>Daily</option>
+                            <option value="168">Weekly</option>
+                            <option value="720">Monthly</option>
+                        </select>
+                        <p class="setting-description">How often to check for filter list updates</p>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Debug & Logging</h3>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="enableLogging">
+                            <span class="checkbox-custom"></span>
+                            Enable Debug Logging
+                        </label>
+                        <p class="setting-description">Log detailed information for troubleshooting</p>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-row">
+                            <div>
+                                <h4>View Logs</h4>
+                                <p class="setting-description">Access debug logs and performance data</p>
+                            </div>
+                            <button class="btn btn-secondary" id="viewLogs">View Logs</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Reset</h3>
+                    <div class="setting-item">
+                        <div class="setting-row">
+                            <div>
+                                <h4>Reset to Defaults</h4>
+                                <p class="setting-description">Restore all settings to their default values</p>
+                            </div>
+                            <button class="btn btn-danger" id="resetSettings">Reset All</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section id="about" class="tab-content">
+                <h2 data-i18n="settings.about">About FilterFox</h2>
+                
+                <div class="about-content">
+                    <div class="about-info">
+                        <img src="../icons/icon128.png" alt="FilterFox" class="about-logo">
+                        <h3>FilterFox v1.0.0</h3>
+                        <p>Advanced ad blocker with smart filtering and privacy protection</p>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <h4 id="totalBlocked">1,234,567</h4>
+                            <p>Ads Blocked</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="bandwidthSaved">45.6 MB</h4>
+                            <p>Bandwidth Saved</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="trackersStopped">8,901</h4>
+                            <p>Trackers Stopped</p>
+                        </div>
+                    </div>
+
+                    <div class="about-links">
+                        <a href="https://github.com/tavybrown/FilterFox" target="_blank" class="btn btn-primary">
+                            <span class="btn-icon">🔗</span>
+                            GitHub Repository
+                        </a>
+                        <a href="mailto:support@filterfox.com" class="btn btn-secondary">
+                            <span class="btn-icon">📧</span>
+                            Support
+                        </a>
+                        <a href="#" id="rateExtension" class="btn btn-secondary">
+                            <span class="btn-icon">⭐</span>
+                            Rate Extension
+                        </a>
+                    </div>
+
+                    <div class="about-legal">
+                        <p>&copy; 2024 FilterFox. Licensed under MIT License.</p>
+                        <div class="legal-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Changelog</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Confirm Action</h3>
+            <p id="modalMessage">Are you sure you want to perform this action?</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn btn-danger" id="modalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="successToast" class="toast">
+        <span id="toastMessage">Settings saved successfully!</span>
+    </div>
+
+    <script src="../src/i18n.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>
