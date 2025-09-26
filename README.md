@@ -3,7 +3,7 @@
 <div align="center">
   <img src="icons/icon128.png" alt="FilterFox Logo" width="128">
   
-  [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/tavybrown/FilterFox/actions)
+  [![Build Status](https://github.com/tavybrown/FilterFox/actions/workflows/ci.yml/badge.svg)](https://github.com/tavybrown/FilterFox/actions/workflows/ci.yml)
   [![Tests](https://img.shields.io/badge/Tests-16%2F16%20Passing-success?style=flat-square&logo=jest)](https://github.com/tavybrown/FilterFox)
   [![Code Coverage](https://img.shields.io/badge/Coverage-92%25-brightgreen?style=flat-square&logo=codecov)](https://github.com/tavybrown/FilterFox)
   [![GitHub last commit](https://img.shields.io/github/last-commit/tavybrown/FilterFox?style=flat-square&logo=github)](https://github.com/tavybrown/FilterFox/commits)
