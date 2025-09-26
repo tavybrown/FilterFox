@@ -1,0 +1,86 @@
+{
+  "filterLists": [
+    {
+      "name": "EasyList",
+      "description": "The most popular ad blocking filter list",
+      "url": "https://easylist.to/easylist/easylist.txt",
+      "category": "ads",
+      "enabled": true,
+      "lastUpdate": null,
+      "updateInterval": 86400
+    },
+    {
+      "name": "EasyPrivacy", 
+      "description": "Blocks tracking and privacy-invasive content",
+      "url": "https://easylist.to/easylist/easyprivacy.txt",
+      "category": "privacy",
+      "enabled": true,
+      "lastUpdate": null,
+      "updateInterval": 86400
+    },
+    {
+      "name": "Fanboy's Annoyance List",
+      "description": "Removes social media content, in-page pop-ups and other annoyances",
+      "url": "https://easylist.to/easylist/fanboy-annoyance.txt",
+      "category": "annoyances",
+      "enabled": false,
+      "lastUpdate": null,
+      "updateInterval": 604800
+    },
+    {
+      "name": "Fanboy's Social Blocking List",
+      "description": "Blocks social media content, widgets and scripts",
+      "url": "https://easylist.to/easylist/fanboy-social.txt", 
+      "category": "social",
+      "enabled": false,
+      "lastUpdate": null,
+      "updateInterval": 604800
+    },
+    {
+      "name": "uBlock filters",
+      "description": "Built-in filters for uBlock Origin",
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
+      "category": "ads",
+      "enabled": true,
+      "lastUpdate": null,
+      "updateInterval": 86400
+    },
+    {
+      "name": "Malware Domain List",
+      "description": "Blocks known malware and phishing domains",
+      "url": "https://www.malwaredomainlist.com/hostslist/hosts.txt",
+      "category": "security",
+      "enabled": true,
+      "lastUpdate": null,
+      "updateInterval": 3600
+    }
+  ],
+  
+  "customRules": [
+    "||example-ads.com^",
+    "||tracker.example.com^",
+    "###advertisement",
+    "##.sponsored-content"
+  ],
+  
+  "regionalFilters": {
+    "enabled": true,
+    "autoDetect": true,
+    "lists": {
+      "DE": "https://easylist.to/easylist/easylistgermany.txt",
+      "FR": "https://easylist.to/easylist/liste_fr.txt", 
+      "RU": "https://easylist.to/easylist/ruadlist.txt",
+      "CN": "https://easylist-downloads.adblockplus.org/easylistchina.txt",
+      "JP": "https://raw.githubusercontent.com/k2jp/abp-japanese-filters/master/abpjf.txt"
+    }
+  },
+  
+  "emergencyFilters": {
+    "enabled": true,
+    "autoUpdate": true,
+    "sources": [
+      "https://filterlists.com/api/emergency",
+      "https://github.com/filterfox/emergency-filters/raw/main/filters.txt"
+    ]
+  }
+}

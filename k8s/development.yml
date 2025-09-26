@@ -1,0 +1,195 @@
+# Kubernetes Configuration for FilterFox Development
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: filterfox-dev
+  labels:
+    name: filterfox-dev
+    environment: development
+
+---
+
+# ConfigMap for application configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: filterfox-config
+  namespace: filterfox-dev
+data:
+  NODE_ENV: "development"
+  LOG_LEVEL: "debug"
+  BROWSER_SUPPORT: "chrome,firefox,edge"
+  UPDATE_INTERVAL: "3600"
+  FILTER_UPDATE_URL: "https://filters.filterfox.dev"
+
+---
+
+# Secret for API keys and sensitive data
+apiVersion: v1
+kind: Secret
+metadata:
+  name: filterfox-secrets
+  namespace: filterfox-dev
+type: Opaque
+data:
+  chrome-client-id: ""
+  chrome-client-secret: ""
+  firefox-api-key: ""
+  firefox-api-secret: ""
+  github-token: ""
+
+---
+
+# Deployment for development environment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: filterfox-dev
+  namespace: filterfox-dev
+  labels:
+    app: filterfox
+    version: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: filterfox
+      version: dev
+  template:
+    metadata:
+      labels:
+        app: filterfox
+        version: dev
+    spec:
+      containers:
+      - name: filterfox-dev
+        image: filterfox:dev
+        ports:
+        - containerPort: 3000
+        - containerPort: 8080
+        env:
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: filterfox-config
+              key: NODE_ENV
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: filterfox-config
+              key: LOG_LEVEL
+        volumeMounts:
+        - name: source-code
+          mountPath: /workspace
+        - name: node-modules
+          mountPath: /workspace/node_modules
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+      volumes:
+      - name: source-code
+        hostPath:
+          path: /path/to/filterfox
+      - name: node-modules
+        emptyDir: {}
+
+---
+
+# Service to expose the development server
+apiVersion: v1
+kind: Service
+metadata:
+  name: filterfox-dev-service
+  namespace: filterfox-dev
+spec:
+  selector:
+    app: filterfox
+    version: dev
+  ports:
+  - name: dev-server
+    protocol: TCP
+    port: 3000
+    targetPort: 3000
+  - name: webpack-dev
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer
+
+---
+
+# Ingress for external access
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: filterfox-dev-ingress
+  namespace: filterfox-dev
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - dev.filterfox.local
+    secretName: filterfox-dev-tls
+  rules:
+  - host: dev.filterfox.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: filterfox-dev-service
+            port:
+              number: 3000
+
+---
+
+# HorizontalPodAutoscaler for automatic scaling
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: filterfox-dev-hpa
+  namespace: filterfox-dev
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: filterfox-dev
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+
+---
+
+# PersistentVolumeClaim for storing build artifacts
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: filterfox-builds-pvc
+  namespace: filterfox-dev
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: standard

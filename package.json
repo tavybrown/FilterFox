@@ -1,0 +1,125 @@
+{
+  "name": "filterfox",
+  "version": "1.0.0",
+  "description": "A powerful and lightweight ad blocker Chrome extension",
+  "main": "src/background.js",
+  "scripts": {
+    "build": "npm run clean && npm run copy && npm run minify",
+    "clean": "rimraf dist/",
+    "copy": "cpx \"src/**/*\" dist/src/ && cpx \"popup/**/*\" dist/popup/ && cpx \"styles/**/*\" dist/styles/ && cpx \"icons/**/*\" dist/icons/ && cpx \"rules/**/*\" dist/rules/ && cpx \"config/**/*\" dist/config/ && cpx \"manifest.json\" dist/",
+    "minify": "npm run minify:js && npm run minify:css",
+    "minify:js": "terser dist/src/*.js --compress --mangle --output-dir dist/src/ --replace && terser dist/popup/*.js --compress --mangle --output-dir dist/popup/ --replace",
+    "minify:css": "cleancss -o dist/styles/popup.css dist/styles/popup.css && cleancss -o dist/styles/content.css dist/styles/content.css",
+    "dev": "npm run copy && npm run watch",
+    "watch": "chokidar \"src/**/*\" \"popup/**/*\" \"styles/**/*\" \"manifest.json\" -c \"npm run copy\"",
+    "lint": "eslint src/ popup/ --ext .js",
+    "lint:fix": "eslint src/ popup/ --ext .js --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "pack": "npm run build && web-ext build --source-dir=dist/ --artifacts-dir=releases/",
+    "pack:firefox": "npm run build && web-ext build --source-dir=dist/ --artifacts-dir=releases/ --filename=filterfox-firefox-{version}.zip",
+    "validate": "web-ext lint --source-dir=dist/",
+    "serve": "npm run copy && web-ext run --source-dir=dist/ --browser-console",
+    "serve:firefox": "npm run copy && web-ext run --source-dir=dist/ --target=firefox-desktop",
+    "release": "npm run test && npm run lint && npm run build && npm run validate && npm run pack",
+    "docker:build": "docker build -t filterfox-dev .",
+    "docker:run": "docker run -it --rm -v $(pwd):/workspace filterfox-dev",
+    "docker:test": "docker-compose up test",
+    "format": "prettier --write \"src/**/*.js\" \"popup/**/*.js\" \"styles/**/*.css\" \"*.json\" \"*.md\"",
+    "pre-commit": "npm run lint:fix && npm run format && npm run test",
+    "install-hooks": "husky install",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "adblocker",
+    "chrome-extension",
+    "privacy",
+    "security",
+    "firefox-addon",
+    "content-blocker",
+    "tracker-blocker"
+  ],
+  "author": {
+    "name": "FilterFox Team",
+    "email": "team@filterfox.dev",
+    "url": "https://filterfox.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/filterfox/filterfox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/filterfox/filterfox/issues"
+  },
+  "homepage": "https://filterfox.dev",
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "babel-jest": "^29.5.0",
+    "chokidar-cli": "^3.0.0",
+    "clean-css-cli": "^5.6.0",
+    "cpx": "^1.5.0",
+    "eslint": "^8.42.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.0",
+    "husky": "^8.0.0",
+    "jest": "^29.5.0",
+    "jest-chrome": "^0.8.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.0",
+    "rimraf": "^5.0.0",
+    "terser": "^5.18.0",
+    "web-ext": "^7.6.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ],
+  "webExt": {
+    "sourceDir": "dist/",
+    "artifactsDir": "releases/",
+    "build": {
+      "overwriteDest": true
+    },
+    "run": {
+      "browserConsole": true,
+      "startUrl": ["about:debugging#/runtime/this-firefox"]
+    }
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["jest-chrome/object"],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "popup/**/*.js",
+      "!src/injected.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["text", "lcov", "html"]
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "prettier --write"],
+    "*.css": ["prettier --write"],
+    "*.{json,md}": ["prettier --write"]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test"
+    }
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/filterfox"
+  }
+}

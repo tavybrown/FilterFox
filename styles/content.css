@@ -1,0 +1,250 @@
+/* FilterFox Content Script Styles - Injected into web pages */
+
+/* Hide ads and blocked elements */
+.filterfox-blocked {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+}
+
+/* Notification for blocked content */
+.filterfox-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 13px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    z-index: 999999 !important;
+    animation: filterfox-slideIn 0.3s ease-out !important;
+    max-width: 300px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.filterfox-notification-content {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.filterfox-notification-icon {
+    font-size: 16px !important;
+}
+
+.filterfox-notification-text {
+    flex: 1 !important;
+    font-weight: 500 !important;
+}
+
+.filterfox-notification-close {
+    background: none !important;
+    border: none !important;
+    color: white !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    padding: 0 !important;
+    margin-left: 8px !important;
+    opacity: 0.7 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.filterfox-notification-close:hover {
+    opacity: 1 !important;
+}
+
+/* Animation for notifications */
+@keyframes filterfox-slideIn {
+    from {
+        transform: translateX(100%) !important;
+        opacity: 0 !important;
+    }
+    to {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+    }
+}
+
+@keyframes filterfox-slideOut {
+    from {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+    }
+    to {
+        transform: translateX(100%) !important;
+        opacity: 0 !important;
+    }
+}
+
+.filterfox-notification.slide-out {
+    animation: filterfox-slideOut 0.3s ease-in !important;
+}
+
+/* Overlay for paused state */
+.filterfox-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 999998 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.filterfox-overlay-content {
+    background: white !important;
+    padding: 24px !important;
+    border-radius: 12px !important;
+    max-width: 400px !important;
+    text-align: center !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+.filterfox-overlay h3 {
+    margin: 0 0 16px 0 !important;
+    font-size: 18px !important;
+    color: #333 !important;
+}
+
+.filterfox-overlay p {
+    margin: 0 0 20px 0 !important;
+    color: #666 !important;
+    line-height: 1.5 !important;
+}
+
+.filterfox-overlay-buttons {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
+}
+
+.filterfox-overlay-button {
+    padding: 10px 20px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+
+.filterfox-overlay-button.primary {
+    background: #667eea !important;
+    color: white !important;
+}
+
+.filterfox-overlay-button.primary:hover {
+    background: #5a6fd8 !important;
+}
+
+.filterfox-overlay-button.secondary {
+    background: #f5f5f5 !important;
+    color: #666 !important;
+}
+
+.filterfox-overlay-button.secondary:hover {
+    background: #e0e0e0 !important;
+}
+
+/* Common ad element hiding patterns */
+[class*="advertisement"],
+[class*="ad-banner"],
+[class*="ad-container"],
+[id*="advertisement"],
+[id*="ad-banner"],
+[id*="google_ads"],
+[class*="sponsored"],
+[class*="promotion"],
+.ad,
+.ads,
+.advert,
+.advertisement,
+.ad-banner,
+.ad-container,
+.google-ad,
+.sponsored-content,
+.promoted-post {
+    display: none !important;
+}
+
+/* Social media widget blocking */
+.filterfox-social-blocked {
+    display: none !important;
+}
+
+/* Tracker blocking indicator */
+.filterfox-tracker-blocked {
+    display: none !important;
+}
+
+/* Anti-adblock detection bypass */
+.filterfox-anti-adblock-bypass {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Cookie notice styling when FilterFox modifies it */
+.filterfox-cookie-notice {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 16px !important;
+    border-radius: 8px !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.filterfox-cookie-notice h4 {
+    margin: 0 0 8px 0 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+}
+
+.filterfox-cookie-notice p {
+    margin: 0 0 12px 0 !important;
+    font-size: 12px !important;
+    color: #666 !important;
+    line-height: 1.4 !important;
+}
+
+.filterfox-cookie-buttons {
+    display: flex !important;
+    gap: 8px !important;
+}
+
+.filterfox-cookie-button {
+    padding: 8px 16px !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.filterfox-cookie-button.accept {
+    background: #28a745 !important;
+    color: white !important;
+}
+
+.filterfox-cookie-button.reject {
+    background: #dc3545 !important;
+    color: white !important;
+}
+
+.filterfox-cookie-button:hover {
+    opacity: 0.9 !important;
+    transform: translateY(-1px) !important;
+}

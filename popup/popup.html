@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilterFox</title>
+    <link rel="stylesheet" href="../styles/popup.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="../icons/icon32.png" alt="FilterFox" class="logo-img">
+            <h1>FilterFox</h1>
+        </div>
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="enableToggle" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+    
+    <div class="stats-container">
+        <div class="stat-item">
+            <div class="stat-number" id="blockedToday">0</div>
+            <div class="stat-label">Blocked Today</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="blockedTotal">0</div>
+            <div class="stat-label">Total Blocked</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="timeSaved">0s</div>
+            <div class="stat-label">Time Saved</div>
+        </div>
+    </div>
+    
+    <div class="current-site">
+        <h3>Current Site</h3>
+        <div class="site-info">
+            <span class="site-url" id="currentUrl">Loading...</span>
+            <span class="site-status" id="siteStatus">Protected</span>
+        </div>
+        <div class="site-stats">
+            <span id="siteBlocked">0 blocked on this page</span>
+        </div>
+    </div>
+    
+    <div class="quick-actions">
+        <button class="action-btn" id="whitelistBtn">
+            <span class="btn-icon">🛡️</span>
+            Whitelist Site
+        </button>
+        <button class="action-btn" id="reportBtn">
+            <span class="btn-icon">🚩</span>
+            Report Issue
+        </button>
+    </div>
+    
+    <div class="filter-options">
+        <h3>Filter Categories</h3>
+        <div class="filter-list">
+            <label class="filter-item">
+                <input type="checkbox" id="adsFilter" checked>
+                <span class="checkmark"></span>
+                <span class="filter-name">Ads & Pop-ups</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" id="trackersFilter" checked>
+                <span class="checkmark"></span>
+                <span class="filter-name">Trackers</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" id="socialFilter">
+                <span class="checkmark"></span>
+                <span class="filter-name">Social Media</span>
+            </label>
+            <label class="filter-item">
+                <input type="checkbox" id="annoyancesFilter">
+                <span class="checkmark"></span>
+                <span class="filter-name">Annoyances</span>
+            </label>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <button class="footer-btn" id="optionsBtn">Options</button>
+        <button class="footer-btn" id="aboutBtn">About</button>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

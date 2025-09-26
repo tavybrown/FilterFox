@@ -1,0 +1,118 @@
+{
+  "name": "FilterFox Configuration",
+  "version": "1.0.0",
+  "description": "Configuration file for FilterFox ad blocker",
+  
+  "defaultSettings": {
+    "enabled": true,
+    "filters": {
+      "ads": true,
+      "trackers": true,
+      "social": false,
+      "annoyances": false,
+      "malware": true,
+      "privacy": true
+    },
+    "notifications": {
+      "showBlockedCount": true,
+      "showWelcome": true,
+      "updateNotifications": true
+    },
+    "performance": {
+      "aggressiveBlocking": false,
+      "allowFirstPartyAds": false,
+      "disableWebRTC": false
+    },
+    "appearance": {
+      "darkMode": false,
+      "compactView": false,
+      "showStatistics": true
+    }
+  },
+  
+  "filterLists": {
+    "ads": {
+      "name": "Ads & Pop-ups",
+      "description": "Blocks display ads, pop-ups, and promotional content",
+      "enabled": true,
+      "priority": 1,
+      "updateInterval": 86400,
+      "sources": [
+        "internal://adblock-rules.json"
+      ]
+    },
+    "trackers": {
+      "name": "Trackers & Analytics",
+      "description": "Blocks tracking scripts and analytics",
+      "enabled": true,
+      "priority": 2,
+      "updateInterval": 86400,
+      "sources": [
+        "internal://tracker-rules.json"
+      ]
+    },
+    "social": {
+      "name": "Social Media Widgets",
+      "description": "Blocks social media buttons and widgets",
+      "enabled": false,
+      "priority": 3,
+      "updateInterval": 604800,
+      "sources": [
+        "internal://social-rules.json"
+      ]
+    },
+    "annoyances": {
+      "name": "Annoyances",
+      "description": "Blocks cookie notices, newsletter popups, etc.",
+      "enabled": false,
+      "priority": 4,
+      "updateInterval": 604800,
+      "sources": [
+        "internal://annoyance-rules.json"
+      ]
+    }
+  },
+  
+  "whitelistDomains": [
+    "github.com",
+    "stackoverflow.com",
+    "developer.mozilla.org"
+  ],
+  
+  "customFilters": {
+    "maxCount": 100,
+    "allowRegex": true,
+    "allowWildcards": true
+  },
+  
+  "statistics": {
+    "trackingEnabled": true,
+    "retentionDays": 30,
+    "categories": [
+      "ads",
+      "trackers",
+      "social",
+      "annoyances",
+      "malware"
+    ]
+  },
+  
+  "advanced": {
+    "debugMode": false,
+    "logLevel": "error",
+    "backupSettings": true,
+    "syncSettings": true
+  },
+  
+  "updates": {
+    "autoUpdate": true,
+    "updateInterval": 3600,
+    "betaChannel": false
+  },
+  
+  "privacy": {
+    "collectStats": false,
+    "shareAnonymousData": false,
+    "crashReports": false
+  }
+}

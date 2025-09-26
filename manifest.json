@@ -1,0 +1,80 @@
+{
+  "manifest_version": 3,
+  "name": "FilterFox",
+  "version": "1.0.0",
+  "description": "A powerful and lightweight ad blocker for Chrome. Block ads, trackers, and malicious content for a faster, safer browsing experience.",
+  "author": "FilterFox Team",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "webNavigation",
+    "declarativeNetRequest",
+    "tabs"
+  ],
+  
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules/adblock-rules.json"
+      }
+    ]
+  },
+  
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"],
+      "css": ["styles/content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "FilterFox - Ad Blocker",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["styles/injected.css", "src/injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  
+  "options_page": "options/options.html",
+  
+  "commands": {
+    "toggle-extension": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Toggle FilterFox on/off"
+    }
+  }
+}
