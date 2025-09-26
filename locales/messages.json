@@ -1,0 +1,345 @@
+{
+  "en": {
+    "extension_name": "FilterFox",
+    "extension_description": "Advanced ad blocker with smart filtering and privacy protection",
+    "popup": {
+      "title": "FilterFox",
+      "subtitle": "Smart Ad Blocker",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "toggle_tooltip": "Enable or disable FilterFox",
+      "stats": {
+        "blocked_today": "Blocked Today",
+        "blocked_total": "Total Blocked",
+        "bandwidth_saved": "Bandwidth Saved",
+        "tracking_stopped": "Trackers Stopped"
+      },
+      "controls": {
+        "whitelist_site": "Whitelist Site",
+        "block_analytics": "Block Analytics",
+        "pause_blocking": "Pause for 30min",
+        "open_settings": "Settings"
+      },
+      "whitelist": {
+        "header": "Whitelisted Domains",
+        "placeholder": "Enter domain to whitelist",
+        "add_button": "Add",
+        "remove_button": "Remove",
+        "empty_message": "No whitelisted domains yet"
+      },
+      "messages": {
+        "site_whitelisted": "Site whitelisted successfully",
+        "site_removed": "Site removed from whitelist",
+        "blocking_paused": "Blocking paused for 30 minutes",
+        "analytics_blocked": "Analytics blocking enabled",
+        "error_invalid_domain": "Please enter a valid domain"
+      }
+    },
+    "notifications": {
+      "blocked_request": "Blocked {{count}} requests on this page",
+      "tracker_blocked": "Tracker blocked: {{domain}}",
+      "analytics_blocked": "Analytics blocked: {{domain}}"
+    },
+    "settings": {
+      "title": "FilterFox Settings",
+      "general": "General Settings",
+      "privacy": "Privacy Settings",
+      "advanced": "Advanced Settings",
+      "about": "About"
+    }
+  },
+  "es": {
+    "extension_name": "FilterFox",
+    "extension_description": "Bloqueador de anuncios avanzado con filtrado inteligente y protección de privacidad",
+    "popup": {
+      "title": "FilterFox",
+      "subtitle": "Bloqueador Inteligente",
+      "enabled": "Activado",
+      "disabled": "Desactivado",
+      "toggle_tooltip": "Activar o desactivar FilterFox",
+      "stats": {
+        "blocked_today": "Bloqueados Hoy",
+        "blocked_total": "Total Bloqueados",
+        "bandwidth_saved": "Ancho Guardado",
+        "tracking_stopped": "Rastreadores Detenidos"
+      },
+      "controls": {
+        "whitelist_site": "Permitir Sitio",
+        "block_analytics": "Bloquear Analytics",
+        "pause_blocking": "Pausar 30min",
+        "open_settings": "Configuración"
+      },
+      "whitelist": {
+        "header": "Dominios Permitidos",
+        "placeholder": "Ingresa dominio a permitir",
+        "add_button": "Agregar",
+        "remove_button": "Eliminar",
+        "empty_message": "No hay dominios permitidos aún"
+      },
+      "messages": {
+        "site_whitelisted": "Sitio agregado a lista blanca",
+        "site_removed": "Sitio eliminado de lista blanca",
+        "blocking_paused": "Bloqueo pausado por 30 minutos",
+        "analytics_blocked": "Bloqueo de analytics activado",
+        "error_invalid_domain": "Por favor ingresa un dominio válido"
+      }
+    },
+    "notifications": {
+      "blocked_request": "{{count}} solicitudes bloqueadas en esta página",
+      "tracker_blocked": "Rastreador bloqueado: {{domain}}",
+      "analytics_blocked": "Analytics bloqueado: {{domain}}"
+    },
+    "settings": {
+      "title": "Configuración FilterFox",
+      "general": "Configuración General",
+      "privacy": "Configuración de Privacidad",
+      "advanced": "Configuración Avanzada",
+      "about": "Acerca de"
+    }
+  },
+  "fr": {
+    "extension_name": "FilterFox",
+    "extension_description": "Bloqueur de publicités avancé avec filtrage intelligent et protection de la vie privée",
+    "popup": {
+      "title": "FilterFox",
+      "subtitle": "Bloqueur Intelligent",
+      "enabled": "Activé",
+      "disabled": "Désactivé",
+      "toggle_tooltip": "Activer ou désactiver FilterFox",
+      "stats": {
+        "blocked_today": "Bloqués Aujourd'hui",
+        "blocked_total": "Total Bloqués",
+        "bandwidth_saved": "Bande Passante Économisée",
+        "tracking_stopped": "Trackers Arrêtés"
+      },
+      "controls": {
+        "whitelist_site": "Autoriser le Site",
+        "block_analytics": "Bloquer Analytics",
+        "pause_blocking": "Pause 30min",
+        "open_settings": "Paramètres"
+      },
+      "whitelist": {
+        "header": "Domaines Autorisés",
+        "placeholder": "Entrez le domaine à autoriser",
+        "add_button": "Ajouter",
+        "remove_button": "Supprimer",
+        "empty_message": "Aucun domaine autorisé pour le moment"
+      },
+      "messages": {
+        "site_whitelisted": "Site ajouté à la liste blanche",
+        "site_removed": "Site supprimé de la liste blanche",
+        "blocking_paused": "Blocage en pause pendant 30 minutes",
+        "analytics_blocked": "Blocage analytics activé",
+        "error_invalid_domain": "Veuillez entrer un domaine valide"
+      }
+    },
+    "notifications": {
+      "blocked_request": "{{count}} requêtes bloquées sur cette page",
+      "tracker_blocked": "Tracker bloqué : {{domain}}",
+      "analytics_blocked": "Analytics bloqué : {{domain}}"
+    },
+    "settings": {
+      "title": "Paramètres FilterFox",
+      "general": "Paramètres Généraux",
+      "privacy": "Paramètres de Confidentialité",
+      "advanced": "Paramètres Avancés",
+      "about": "À propos"
+    }
+  },
+  "de": {
+    "extension_name": "FilterFox",
+    "extension_description": "Erweiterter Werbeblocker mit intelligentem Filtern und Datenschutz",
+    "popup": {
+      "title": "FilterFox",
+      "subtitle": "Intelligenter Blocker",
+      "enabled": "Aktiviert",
+      "disabled": "Deaktiviert",
+      "toggle_tooltip": "FilterFox aktivieren oder deaktivieren",
+      "stats": {
+        "blocked_today": "Heute Blockiert",
+        "blocked_total": "Gesamt Blockiert",
+        "bandwidth_saved": "Bandbreite Gespart",
+        "tracking_stopped": "Tracker Gestoppt"
+      },
+      "controls": {
+        "whitelist_site": "Seite Erlauben",
+        "block_analytics": "Analytics Blockieren",
+        "pause_blocking": "30min Pausieren",
+        "open_settings": "Einstellungen"
+      },
+      "whitelist": {
+        "header": "Erlaubte Domains",
+        "placeholder": "Domain zum Erlauben eingeben",
+        "add_button": "Hinzufügen",
+        "remove_button": "Entfernen",
+        "empty_message": "Noch keine erlaubten Domains"
+      },
+      "messages": {
+        "site_whitelisted": "Seite zur Whitelist hinzugefügt",
+        "site_removed": "Seite von Whitelist entfernt",
+        "blocking_paused": "Blockierung für 30 Minuten pausiert",
+        "analytics_blocked": "Analytics-Blockierung aktiviert",
+        "error_invalid_domain": "Bitte geben Sie eine gültige Domain ein"
+      }
+    },
+    "notifications": {
+      "blocked_request": "{{count}} Anfragen auf dieser Seite blockiert",
+      "tracker_blocked": "Tracker blockiert: {{domain}}",
+      "analytics_blocked": "Analytics blockiert: {{domain}}"
+    },
+    "settings": {
+      "title": "FilterFox Einstellungen",
+      "general": "Allgemeine Einstellungen",
+      "privacy": "Datenschutz-Einstellungen",
+      "advanced": "Erweiterte Einstellungen",
+      "about": "Über"
+    }
+  },
+  "ja": {
+    "extension_name": "FilterFox",
+    "extension_description": "スマートフィルタリングとプライバシー保護を備えた高度な広告ブロッカー",
+    "popup": {
+      "title": "FilterFox",
+      "subtitle": "スマート広告ブロッカー",
+      "enabled": "有効",
+      "disabled": "無効",
+      "toggle_tooltip": "FilterFoxを有効または無効にする",
+      "stats": {
+        "blocked_today": "今日のブロック数",
+        "blocked_total": "総ブロック数",
+        "bandwidth_saved": "節約帯域幅",
+        "tracking_stopped": "停止トラッカー"
+      },
+      "controls": {
+        "whitelist_site": "サイトを許可",
+        "block_analytics": "Analytics をブロック",
+        "pause_blocking": "30分間一時停止",
+        "open_settings": "設定"
+      },
+      "whitelist": {
+        "header": "許可されたドメイン",
+        "placeholder": "許可するドメインを入力",
+        "add_button": "追加",
+        "remove_button": "削除",
+        "empty_message": "まだ許可されたドメインはありません"
+      },
+      "messages": {
+        "site_whitelisted": "サイトがホワイトリストに追加されました",
+        "site_removed": "サイトがホワイトリストから削除されました",
+        "blocking_paused": "ブロッキングが30分間一時停止されました",
+        "analytics_blocked": "Analyticsブロッキングが有効になりました",
+        "error_invalid_domain": "有効なドメインを入力してください"
+      }
+    },
+    "notifications": {
+      "blocked_request": "このページで{{count}}件のリクエストをブロックしました",
+      "tracker_blocked": "トラッカーをブロック: {{domain}}",
+      "analytics_blocked": "Analyticsをブロック: {{domain}}"
+    },
+    "settings": {
+      "title": "FilterFox 設定",
+      "general": "一般設定",
+      "privacy": "プライバシー設定",
+      "advanced": "詳細設定",
+      "about": "について"
+    }
+  },
+  "zh": {
+    "extension_name": "FilterFox",
+    "extension_description": "具有智能过滤和隐私保护的高级广告拦截器",
+    "popup": {
+      "title": "FilterFox",
+      "subtitle": "智能广告拦截器",
+      "enabled": "已启用",
+      "disabled": "已禁用",
+      "toggle_tooltip": "启用或禁用 FilterFox",
+      "stats": {
+        "blocked_today": "今日拦截",
+        "blocked_total": "总计拦截",
+        "bandwidth_saved": "节省带宽",
+        "tracking_stopped": "已阻止追踪器"
+      },
+      "controls": {
+        "whitelist_site": "白名单网站",
+        "block_analytics": "阻止分析",
+        "pause_blocking": "暂停30分钟",
+        "open_settings": "设置"
+      },
+      "whitelist": {
+        "header": "白名单域名",
+        "placeholder": "输入要加入白名单的域名",
+        "add_button": "添加",
+        "remove_button": "移除",
+        "empty_message": "还没有白名单域名"
+      },
+      "messages": {
+        "site_whitelisted": "网站已成功加入白名单",
+        "site_removed": "网站已从白名单中移除",
+        "blocking_paused": "拦截已暂停30分钟",
+        "analytics_blocked": "分析拦截已启用",
+        "error_invalid_domain": "请输入有效的域名"
+      }
+    },
+    "notifications": {
+      "blocked_request": "在此页面拦截了{{count}}个请求",
+      "tracker_blocked": "已拦截追踪器：{{domain}}",
+      "analytics_blocked": "已拦截分析：{{domain}}"
+    },
+    "settings": {
+      "title": "FilterFox 设置",
+      "general": "常规设置",
+      "privacy": "隐私设置",
+      "advanced": "高级设置",
+      "about": "关于"
+    }
+  },
+  "pt": {
+    "extension_name": "FilterFox",
+    "extension_description": "Bloqueador de anúncios avançado com filtragem inteligente e proteção de privacidade",
+    "popup": {
+      "title": "FilterFox",
+      "subtitle": "Bloqueador Inteligente",
+      "enabled": "Ativado",
+      "disabled": "Desativado",
+      "toggle_tooltip": "Ativar ou desativar FilterFox",
+      "stats": {
+        "blocked_today": "Bloqueados Hoje",
+        "blocked_total": "Total Bloqueados",
+        "bandwidth_saved": "Largura de Banda Economizada",
+        "tracking_stopped": "Rastreadores Parados"
+      },
+      "controls": {
+        "whitelist_site": "Permitir Site",
+        "block_analytics": "Bloquear Analytics",
+        "pause_blocking": "Pausar 30min",
+        "open_settings": "Configurações"
+      },
+      "whitelist": {
+        "header": "Domínios Permitidos",
+        "placeholder": "Digite domínio para permitir",
+        "add_button": "Adicionar",
+        "remove_button": "Remover",
+        "empty_message": "Nenhum domínio permitido ainda"
+      },
+      "messages": {
+        "site_whitelisted": "Site adicionado à lista branca",
+        "site_removed": "Site removido da lista branca",
+        "blocking_paused": "Bloqueio pausado por 30 minutos",
+        "analytics_blocked": "Bloqueio de analytics ativado",
+        "error_invalid_domain": "Por favor digite um domínio válido"
+      }
+    },
+    "notifications": {
+      "blocked_request": "{{count}} solicitações bloqueadas nesta página",
+      "tracker_blocked": "Rastreador bloqueado: {{domain}}",
+      "analytics_blocked": "Analytics bloqueado: {{domain}}"
+    },
+    "settings": {
+      "title": "Configurações FilterFox",
+      "general": "Configurações Gerais",
+      "privacy": "Configurações de Privacidade",
+      "advanced": "Configurações Avançadas",
+      "about": "Sobre"
+    }
+  }
+}

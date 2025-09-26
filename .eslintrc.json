@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "webextensions": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "globals": {
+    "chrome": "readonly",
+    "browser": "readonly"
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-unused-vars": ["warn"],
+    "no-console": ["warn"],
+    "no-debugger": ["error"]
+  },
+  "ignorePatterns": [
+    "dist/",
+    "build/",
+    "releases/",
+    "node_modules/",
+    "coverage/"
+  ]
+}

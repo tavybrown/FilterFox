@@ -1,0 +1,422 @@
+/**
+ * Mobile Responsive Styles for FilterFox Extension
+ * Optimized for small screens and touch interactions
+ */
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+    .popup-container {
+        width: 100vw !important;
+        max-width: none !important;
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 20px 15px;
+    }
+
+    .popup-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .header-title {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .header-subtitle {
+        text-align: center;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    /* Mobile-optimized toggle switch */
+    .toggle-container {
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .toggle-switch {
+        transform: scale(1.2);
+        margin: 0 10px;
+    }
+
+    .toggle-switch input:checked + .slider {
+        background: linear-gradient(45deg, #ff6b35, #ff8e53);
+    }
+
+    /* Touch-friendly buttons */
+    .control-buttons {
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .control-btn {
+        min-height: 48px; /* Touch target minimum */
+        min-width: 48px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 12px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(255, 107, 53, 0.3);
+    }
+
+    .control-btn:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+    /* Mobile stats layout */
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .stat-item {
+        padding: 20px 15px;
+        border-radius: 12px;
+        text-align: center;
+        min-height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        background: linear-gradient(45deg, #ff6b35, #4ecdc4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.8;
+    }
+
+    /* Mobile whitelist section */
+    .whitelist-section {
+        margin: 25px 0;
+    }
+
+    .whitelist-header {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .whitelist-input-container {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .whitelist-input {
+        width: 100%;
+        padding: 15px 20px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .whitelist-input:focus {
+        border-color: #ff6b35;
+        box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+    }
+
+    .whitelist-add-btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(45deg, #ff6b35, #ff8e53);
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .whitelist-items {
+        max-height: 200px;
+        overflow-y: auto;
+        gap: 10px;
+    }
+
+    .whitelist-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        min-height: 60px;
+    }
+
+    .whitelist-domain {
+        flex: 1;
+        font-size: 0.95rem;
+        word-break: break-all;
+        margin-right: 15px;
+    }
+
+    .whitelist-remove-btn {
+        background: rgba(255, 107, 53, 0.2);
+        border: 1px solid #ff6b35;
+        color: #ff6b35;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        min-height: 40px;
+        min-width: 40px;
+        cursor: pointer;
+    }
+
+    /* Mobile navigation tabs */
+    .nav-tabs {
+        display: flex;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 5px;
+        margin-bottom: 20px;
+        overflow-x: auto;
+    }
+
+    .nav-tab {
+        flex: 1;
+        padding: 12px 15px;
+        text-align: center;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        font-size: 0.9rem;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-tab.active {
+        background: linear-gradient(45deg, #ff6b35, #ff8e53);
+        color: white;
+        font-weight: 600;
+    }
+
+    /* Mobile scrollbar styling */
+    .whitelist-items::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .whitelist-items::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+    }
+
+    .whitelist-items::-webkit-scrollbar-thumb {
+        background: rgba(255, 107, 53, 0.5);
+        border-radius: 2px;
+    }
+
+    /* Mobile animations */
+    @keyframes mobileSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .stat-item,
+    .whitelist-item {
+        animation: mobileSlideIn 0.3s ease-out;
+    }
+
+    /* Mobile toast notifications */
+    .mobile-toast {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        background: rgba(78, 205, 196, 0.95);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: 500;
+        z-index: 1000;
+        transform: translateY(100px);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-toast.show {
+        transform: translateY(0);
+    }
+
+    /* Mobile loading states */
+    .mobile-loader {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #ff6b35;
+        animation: mobileSpinner 0.8s linear infinite;
+    }
+
+    @keyframes mobileSpinner {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+/* Tablet responsive adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .popup-container {
+        width: 420px;
+        max-height: 650px;
+        padding: 25px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .control-buttons {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .control-btn {
+        flex: 1;
+        min-width: 140px;
+    }
+}
+
+/* High-DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .popup-container {
+        border: 0.5px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .toggle-switch .slider {
+        border: 0.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .control-btn {
+        border: 0.5px solid rgba(255, 107, 53, 0.3);
+    }
+}
+
+/* Dark mode mobile adjustments */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+    .popup-container {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    .whitelist-input {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .whitelist-item {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-tabs {
+        background: rgba(255, 255, 255, 0.08);
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+    .popup-container {
+        padding: 15px;
+        min-height: auto;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .popup-header {
+        margin-bottom: 15px;
+    }
+
+    .header-title {
+        font-size: 1.5rem;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    .stat-item {
+        min-height: 60px;
+        padding: 15px 10px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+/* Accessibility improvements for mobile */
+@media (max-width: 768px) {
+    /* Focus indicators */
+    .control-btn:focus,
+    .whitelist-input:focus,
+    .whitelist-add-btn:focus,
+    .nav-tab:focus {
+        outline: 2px solid #ff6b35;
+        outline-offset: 2px;
+    }
+
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+        .control-btn,
+        .stat-item,
+        .whitelist-item,
+        .mobile-toast {
+            animation: none;
+            transition: none;
+        }
+    }
+
+    /* High contrast mode */
+    @media (prefers-contrast: high) {
+        .popup-container {
+            border: 2px solid white;
+        }
+
+        .control-btn {
+            border: 2px solid #ff6b35;
+        }
+
+        .toggle-switch .slider {
+            border: 2px solid white;
+        }
+    }
+}

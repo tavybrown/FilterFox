@@ -1,0 +1,148 @@
+/* Dark Mode Theme for FilterFox Popup */
+
+/* Dark mode variables */
+:root {
+  --dark-bg-primary: #1a1a2e;
+  --dark-bg-secondary: #16213e;
+  --dark-bg-tertiary: #0f3460;
+  --dark-text-primary: #ffffff;
+  --dark-text-secondary: #b8c5d6;
+  --dark-accent: #00d4ff;
+  --dark-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: var(--dark-gradient);
+  color: var(--dark-text-primary);
+}
+
+.dark-mode .header {
+  background: rgba(15, 52, 96, 0.3);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.dark-mode .logo h1 {
+  color: var(--dark-accent);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.dark-mode .stats-container {
+  background: rgba(15, 52, 96, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.dark-mode .stat-item {
+  background: rgba(22, 33, 62, 0.4);
+}
+
+.dark-mode .stat-item:hover {
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.dark-mode .stat-number {
+  color: var(--dark-accent);
+}
+
+.dark-mode .stat-label {
+  color: var(--dark-text-secondary);
+}
+
+.dark-mode .current-site {
+  background: rgba(15, 52, 96, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.dark-mode .site-status.protected {
+  background: rgba(0, 212, 255, 0.2);
+  color: var(--dark-accent);
+}
+
+.dark-mode .action-btn {
+  background: rgba(15, 52, 96, 0.4);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  color: var(--dark-text-primary);
+}
+
+.dark-mode .action-btn:hover {
+  background: rgba(0, 212, 255, 0.1);
+  border-color: var(--dark-accent);
+}
+
+.dark-mode .filter-item {
+  background: rgba(22, 33, 62, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.dark-mode .filter-item:hover {
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.dark-mode .checkmark {
+  background: rgba(15, 52, 96, 0.5);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.dark-mode .filter-item input:checked + .checkmark {
+  background: var(--dark-accent);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.dark-mode .footer {
+  background: rgba(15, 52, 96, 0.4);
+  border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.dark-mode .footer-btn {
+  background: rgba(22, 33, 62, 0.4);
+  color: var(--dark-text-secondary);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.dark-mode .footer-btn:hover {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--dark-accent);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 20px;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:before {
+  content: "🌙";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+body.dark-mode .theme-toggle:before {
+  content: "☀️";
+  transform: translateX(20px);
+  background: var(--dark-accent);
+}
+
+/* Smooth transitions for theme switching */
+body, .header, .stats-container, .stat-item, .current-site, 
+.action-btn, .filter-item, .footer, .footer-btn {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
