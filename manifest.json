@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "FilterFox",
   "version": "1.0.0",
-  "description": "A powerful and lightweight ad blocker for Chrome. Block ads, trackers, and malicious content for a faster, safer browsing experience.",
+  "description": "A powerful and lightweight ad blocker for Chrome. Block ads, trackers, and malicious content for faster browsing.",
   "author": "FilterFox Team",
   
   "permissions": [
@@ -65,8 +65,6 @@
       "matches": ["<all_urls>"]
     }
   ],
-  
-  "options_page": "options/options.html",
   
   "commands": {
     "toggle-extension": {
