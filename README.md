@@ -5,9 +5,9 @@
   
   [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/abcdefghijklmnopqrstuvwxyz123456?label=Chrome%20Web%20Store)](https://chrome.google.com/webstore/detail/abcdefghijklmnopqrstuvwxyz123456)
   [![Mozilla Add-on](https://img.shields.io/amo/v/filterfox?label=Firefox%20Add-on)](https://addons.mozilla.org/addon/filterfox/)
-  [![GitHub release](https://img.shields.io/github/v/release/filterfox/filterfox)](https://github.com/filterfox/filterfox/releases)
+  [![GitHub release](https://img.shields.io/github/v/release/tavybrown/filterfox)](https://github.com/tavybrown/filterfox/releases)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Build Status](https://github.com/filterfox/filterfox/workflows/CI/badge.svg)](https://github.com/filterfox/filterfox/actions)
+  [![Build Status](https://github.com/tavybrown/filterfox/workflows/CI/badge.svg)](https://github.com/tavybrown/filterfox/actions)
   
   **A powerful, lightweight, and privacy-focused ad blocker for Chrome and Firefox**
   
@@ -122,7 +122,7 @@
 ### Development Setup
 ```bash
 # Clone the repository
-git clone https://github.com/filterfox/filterfox.git
+git clone https://github.com/tavybrown/filterfox.git
 cd filterfox
 
 # Install dependencies
@@ -222,8 +222,8 @@ FilterFox is committed to user privacy:
 We welcome contributions from the community! Here's how you can help:
 
 ### Ways to Contribute
-- 🐛 **Bug Reports**: Found a bug? [Create an issue](https://github.com/filterfox/filterfox/issues)
-- 💡 **Feature Requests**: Have an idea? [Start a discussion](https://github.com/filterfox/filterfox/discussions)
+- 🐛 **Bug Reports**: Found a bug? [Create an issue](https://github.com/tavybrown/filterfox/issues)
+- 💡 **Feature Requests**: Have an idea? [Start a discussion](https://github.com/tavybrown/filterfox/discussions)
 - 🔧 **Code Contributions**: Submit a pull request
 - 📝 **Documentation**: Help improve our docs
 - 🌍 **Translations**: Help translate FilterFox

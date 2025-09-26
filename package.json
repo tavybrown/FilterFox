@@ -48,10 +48,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/filterfox/filterfox.git"
+    "url": "https://github.com/tavybrown/filterfox.git"
   },
   "bugs": {
-    "url": "https://github.com/filterfox/filterfox/issues"
+    "url": "https://github.com/tavybrown/filterfox/issues"
   },
   "homepage": "https://filterfox.dev",
   "devDependencies": {
@@ -120,6 +120,6 @@
   },
   "funding": {
     "type": "github",
-    "url": "https://github.com/sponsors/filterfox"
+    "url": "https://github.com/sponsors/tavybrown"
   }
 }
