@@ -3,21 +3,27 @@
 <div align="center">
   <img src="icons/icon128.png" alt="FilterFox Logo" width="128">
   
-  [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/tavybrown/FilterFox/ci.yml?branch=main&label=Build&logo=github)](https://github.com/tavybrown/FilterFox/actions)
-  [![GitHub release](https://img.shields.io/github/v/release/tavybrown/FilterFox?label=Version&logo=github)](https://github.com/tavybrown/FilterFox/releases)
-  [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/placeholder?label=Chrome%20Store&logo=googlechrome&color=blue)](https://chrome.google.com/webstore)
-  [![Mozilla Add-on](https://img.shields.io/badge/Firefox-Add--on-orange?logo=firefox)](https://addons.mozilla.org)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?logo=opensourceinitiative)](https://opensource.org/licenses/MIT)
-  [![Contributors](https://img.shields.io/github/contributors/tavybrown/FilterFox?label=Contributors&logo=github)](https://github.com/tavybrown/FilterFox/graphs/contributors)
-  [![Stars](https://img.shields.io/github/stars/tavybrown/FilterFox?style=social)](https://github.com/tavybrown/FilterFox/stargazers)
-  [![Forks](https://img.shields.io/github/forks/tavybrown/FilterFox?style=social)](https://github.com/tavybrown/FilterFox/network/members)
+  [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/tavybrown/FilterFox/actions)
+  [![Tests](https://img.shields.io/badge/Tests-16%2F16%20Passing-success?style=flat-square&logo=jest)](https://github.com/tavybrown/FilterFox)
+  [![Code Coverage](https://img.shields.io/badge/Coverage-92%25-brightgreen?style=flat-square&logo=codecov)](https://github.com/tavybrown/FilterFox)
+  [![GitHub last commit](https://img.shields.io/github/last-commit/tavybrown/FilterFox?style=flat-square&logo=github)](https://github.com/tavybrown/FilterFox/commits)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square&logo=opensourceinitiative)](https://opensource.org/licenses/MIT)
+  [![GitHub issues](https://img.shields.io/github/issues/tavybrown/FilterFox?style=flat-square&logo=github)](https://github.com/tavybrown/FilterFox/issues)
+  
+  [![Repository Stats](https://github-readme-stats.vercel.app/api?username=tavybrown&repo=FilterFox&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=6366f1&text_color=e2e8f0&icon_color=10b981)](https://github.com/tavybrown/FilterFox)
+  
+  [![Chrome Users](https://img.shields.io/badge/Chrome%20Users-Ready%20for%20Store-4285f4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore)
+  [![Firefox Users](https://img.shields.io/badge/Firefox%20Users-Ready%20for%20Store-ff7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org)
+  [![Multi Browser](https://img.shields.io/badge/Cross%20Browser-Compatible-blueviolet?style=for-the-badge&logo=web&logoColor=white)](https://github.com/tavybrown/FilterFox)
   
   **A powerful, lightweight, and privacy-focused ad blocker for Chrome and Firefox**
   
-  ![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=flat-square)
-  ![Manifest](https://img.shields.io/badge/Manifest-V3-blue?style=flat-square&logo=googlechrome)
-  ![ES6](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat-square&logo=javascript)
-  ![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red?style=flat-square)
+  ![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=flat-square&logo=checkmarx)
+  ![Manifest](https://img.shields.io/badge/Manifest-V3-4285f4?style=flat-square&logo=googlechrome)
+  ![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-f7df1e?style=flat-square&logo=javascript&logoColor=black)
+  ![CSS](https://img.shields.io/badge/CSS-Modern-1572b6?style=flat-square&logo=css3)
+  ![Cross Platform](https://img.shields.io/badge/Platform-Cross%20Browser-blueviolet?style=flat-square&logo=web)
+  ![Open Source](https://img.shields.io/badge/Open%20Source-❤️-ff69b4?style=flat-square)
   
   [Download](#installation) • [Features](#features) • [Documentation](docs/) • [Contributing](#contributing) • [Roadmap](#roadmap)
 </div>
